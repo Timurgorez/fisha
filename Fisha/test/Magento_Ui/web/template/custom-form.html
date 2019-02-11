@@ -1,0 +1,61 @@
+<section class="block">
+    <div class="messages" visible="isValid()">
+        <div class="message success" translate="'Form data validation passed'"/>
+    </div>
+    <div class="content-form" visible="!isValid()">
+        <header class="header">
+            <h2 class="title" text="title"/>
+        </header>
+        <form method="POST" class="form custom-form" name="test-form" data-bind="submit: validateForm" novalidate>
+
+            <div class="fieldset">
+                <div class="field">
+                    <div class="control">
+                        <input class="input-text required" name="name" type="text" data-bind="attr: {placeholder: $t('Name')}"/>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <input class="input-text required" name="email" type="email" data-bind="attr: {placeholder: $t('Email')}"/>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <input class="input-text required validate-phoneStrict" name="phone" type="text" data-bind="attr: {placeholder: $t('Phone (096-333-4444)')}"/>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <input class="input-text required" name="address" type="text" data-bind="attr: {placeholder: $t('Address')}"/>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <select class="required" name="country" data-bind="foreach: arrCities">
+                            <option data-bind="attr: {value: alpha3Code}" text="name"/>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <div class="wrap-checkbox">
+                            <input class="required" type="checkbox" name="random.checkbox" id="random-checkbox" data-bind="checked: isChecked"/>
+                            <label for="random-checkbox" translate="'Random check'"/>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="action-btn">
+                <button type="button" class="btn-clear" translate="'Clear'" click="clearForm.bind($data, $element)"/>
+                <button type="submit" class="btn-submit" translate="'Submit'"/>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!--<referenceContainer name="header.container">-->
+            <!--<container name="header-wrapper" label="Page Header" as="header-wrapper" htmlTag="div" htmlClass="header content">-->
+                <!--<block class="Magento\Theme\Block\Html\Header\Logo" name="logo">-->
+                    <!--<arguments>-->
+                        <!--<argument name="logo_img_width" xsi:type="number">189</argument>-->
+                        <!--<argument name="logo_img_height" xsi:type="number">64</argument>-->
+                    <!--</arguments>-->
+                <!--</block>-->
+                <!--&lt;!&ndash;<block class="Magento\Framework\View\Element\Template" name="logo" template="Magento_Ui::logo.phtml" display="false"/>&ndash;&gt;-->
+            <!--</container>-->
+        <!--</referenceContainer>-->
+        <referenceBlock name="page.main.title" display="false"/>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="custom.form" template="Magento_Ui::custom-form.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,146 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .content-form{
+    border: 1px solid #262626;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .content-form header{
+    border-bottom: 1px solid #262626;
+    background: #cafdf9;
+    height: 100%;
+    padding: 20px;
+  }
+  .content-form header .title{
+    margin: 0;
+    text-align: center;
+  }
+  .content-form .custom-form{
+    padding: 30px;
+    .fieldset{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 0 0 10px;
+    }
+    .field{
+      min-height: 56px;
+      margin: 0 0 10px;
+      width: 100%;
+      &:last-child{
+        order: 6;
+        .wrap-checkbox{
+          height: 32px;
+          display: flex;
+          align-items: center;
+        }
+      }
+      &:nth-last-child(2){
+        order: 5;
+      }
+    }
+    input, select{
+      border: 1px solid #262626;
+    }
+    input[type="checkbox"]{
+      opacity: 0;
+    }
+    .wrap-checkbox label{
+      align-items: center;
+      display: flex;
+      position: relative;
+      margin-left: -18px;
+    }
+    .wrap-checkbox label:before{
+      content: ' ';
+      display: inline-block;
+      height: 15px;
+      width: 15px;
+      border: 1px solid #262626;
+      margin-right: 10px;
+    }
+    .wrap-checkbox label:after{
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: -2px;
+      width: 6px;
+      height: 14px;
+      border: solid #262626;
+      border-width: 0 3px 3px 0;
+      transform: rotate(30deg);
+      opacity: 0;
+      transition: 0.2s;
+    }
+    .wrap-checkbox input:checked + label:after{
+      opacity: 1;
+      transition: 0.2s;
+    }
+
+  }
+  .content-form .custom-form .action-btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .content-form .custom-form .action-btn button{
+    border: 1px solid #262626;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 12px 40px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+  }
+  .content-form .custom-form .action-btn button:hover{
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+  }
+  .content-form .custom-form .action-btn{
+    .btn-clear{
+      background: #fff;
+      color: #262626;
+    }
+    .btn-submit{
+      background: #262626;
+      color: #fff;
+    }
+  }
+
+}
+
+//
+//  Tablet
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .content-form .custom-form {
+    padding: 70px;
+    padding-bottom: 30px;
+    .field{
+      width: 46%;
+      &:last-child{
+        order: 5;
+      }
+      &:nth-last-child(2){
+        order: 6;
+      }
+    }
+  }
+}
+
+
+//
+//  Tablet
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+  .content-form .custom-form .action-btn button{
+    width: 100%;
+  }
+  .content-form .custom-form {
+    padding: 15px !important;
+  }
+}
